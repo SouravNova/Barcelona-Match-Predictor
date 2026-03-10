@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Predict FC Barcelona match results with advanced analytics and live history data.">
+    <meta name="keywords" content="FC Barcelona, Match Predictor, Football, La Liga, Blaugrana">
+    <title>FC Barcelona Match Predictor | Ultimate Analytic Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Advanced Animated Background -->
+    <div class="bg-animation">
+        <div class="glow-orb blue"></div>
+        <div class="glow-orb red"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header animate-fade-in">
+            <img src="assets/barcelona_project_logo.svg" alt="FC Barcelona Logo Placeholder" id="teamLogo" class="logo">
+            <div class="title-container">
+                <h1>Barcelona Match Predictor ⚽</h1>
+                <p>Predict the result of upcoming Barcelona matches using data-driven analytics</p>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="main-grid">
+            <!-- Input Form Card -->
+            <section class="card input-card animate-slide-up" style="animation-delay: 0.1s;">
+                <h2>Match Details</h2>
+                <form id="predictionForm" onsubmit="event.preventDefault(); predictMatch();">
+                    <div class="form-group">
+                        <label for="opponent">Opponent Team Name</label>
+                        <input type="text" id="opponent" placeholder="e.g. Real Madrid" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location">Match Location</label>
+                        <select id="location" required>
+                            <option value="home">Home (Camp Nou)</option>
+                            <option value="away">Away</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group half-width">
+                            <label for="goalsScored">Last 5 Matches Goals Scored (Barca)</label>
+                            <input type="number" id="goalsScored" min="0" required placeholder="e.g. 12">
+                        </div>
+                        <div class="form-group half-width">
+                            <label for="goalsConceded">Last 5 Matches Goals Conceded (Barca)</label>
+                            <input type="number" id="goalsConceded" min="0" required placeholder="e.g. 5">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="opponentStrength">Opponent Strength Rating (1-10)</label>
+                        <input type="number" id="opponentStrength" min="1" max="10" required placeholder="e.g. 9">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lewandowskiGoals">Lewandowski Goals (Last 5 Matches) <span
+                                class="badge">Optional</span></label>
+                        <input type="number" id="lewandowskiGoals" min="0" placeholder="e.g. 4">
+                    </div>
+
+                    <button type="submit" class="primary-btn">Predict Match Result <span class="icon">🚀</span></button>
+                </form>
+            </section>
+
+            <!-- Results & Extra Info Grid -->
+            <div class="side-panel animate-slide-up" style="animation-delay: 0.2s;">
+                <!-- Result Section -->
+                <section class="card result-card" id="resultSection">
+                    <div class="result-placeholder" id="resultPlaceholder">
+                        <span class="pulse-icon">🔮</span>
+                        <p>Fill out the details to see the prediction.</p>
+                    </div>
+
+                    <div class="result-content hidden" id="resultContent">
+                        <h2 class="result-title">Prediction</h2>
+                        <div class="prediction-badge" id="predictionBadge">Win</div>
+
+                        <div class="confidence-container">
+                            <div class="confidence-header">
+                                <span>Confidence</span>
+                                <span id="confidenceValue">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="confidenceFill"></div>
+                            </div>
+                        </div>
+
+                        <div class="score-breakdown">
+                            <h3>Score Breakdown</h3>
+                            <ul id="scoreDetails">
+                                <!-- Filled by JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Match History -->
+                <section class="card history-card">
+                    <h2>Recent Matches</h2>
+                    <ul class="match-list" id="matchHistoryList">
+                        <li>Loading history...</li>
+                    </ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
