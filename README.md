@@ -13,7 +13,7 @@ A modern, responsive web-based application that predicts match outcomes for FC B
 - **Match Prediction System**: Analyzes user input to predict Win/Draw/Loss and calculate a confidence percentage.
 - **Interactive UI**: Glassmorphism design with animations to provide a rich user experience.
 - **Football-Themed Design**: Uses FC Barcelona's iconic Blaugrana colors.
-- **Bonus Scoring**: Accounts for player form (e.g. Lewandowski) impacting overall strength.
+- **Bonus Scoring**: Accounts for player form (e.g. Lamine Yamal) impacting overall strength.
 - **Match History**: Displays a history of recent team matches via JSON fetching.
 
 ## Tech Stack
@@ -30,7 +30,7 @@ A modern, responsive web-based application that predicts match outcomes for FC B
 - Goals Scored: 10
 - Goals Conceded: 4
 - Opponent Strength: 8
-- Lewandowski Goals: 4
+- Lamine Yamal G/A: 4
 
 **Output:**
 - Prediction: Barcelona Win

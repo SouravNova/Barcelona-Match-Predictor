@@ -51,20 +51,20 @@ function predictMatch() {
     const goalsScored = parseInt(document.getElementById("goalsScored").value) || 0;
     const goalsConceded = parseInt(document.getElementById("goalsConceded").value) || 0;
     const opponentStrength = parseInt(document.getElementById("opponentStrength").value) || 5;
-    const lewandowskiGoals = parseInt(document.getElementById("lewandowskiGoals").value) || 0;
+    const yamalGA = parseInt(document.getElementById("yamalGA").value) || 0;
 
     // 2. Algorithm Scoring
     // Normalized form score (Average goals per game diff over last 5)
     const formScore = (goalsScored - goalsConceded) / 5;
     const homeAdvantage = location === "home" ? 1.5 : 0;
     
-    // Feature: Lewandowski impact
-    const lewandowskiBonus = lewandowskiGoals >= 3 ? 1 : (lewandowskiGoals >= 1 ? 0.5 : 0);
+    // Feature: Lamine Yamal impact
+    const yamalBonus = yamalGA >= 3 ? 1 : (yamalGA >= 1 ? 0.5 : 0);
 
     // Feature: Clean Sheet Bonus
     const cleanSheetBonus = goalsConceded === 0 ? 0.5 : 0;
 
-    const totalScore = formScore + homeAdvantage - (opponentStrength / 2) + lewandowskiBonus + cleanSheetBonus;
+    const totalScore = formScore + homeAdvantage - (opponentStrength / 2) + yamalBonus + cleanSheetBonus;
 
     // 3. Determine Outcome
     let prediction, themeClass;
@@ -93,7 +93,7 @@ function predictMatch() {
         formScore: formScore.toFixed(1),
         homeAdvantage,
         opponentStrength: (opponentStrength / 2).toFixed(1),
-        lewandowskiBonus,
+        yamalBonus,
         cleanSheetBonus,
         totalScore: totalScore.toFixed(1)
     });
@@ -148,7 +148,7 @@ function displayResult(prediction, confidence, themeClass, breakdown) {
         <li><span>Form Index (Avg G-Diff)</span> <span>${breakdown.formScore > 0 ? '+' : ''}${breakdown.formScore}</span></li>
         <li><span>Home Advantage</span> <span>+${breakdown.homeAdvantage}</span></li>
         <li><span>Opponent Penalty</span> <span>-${breakdown.opponentStrength}</span></li>
-        ${breakdown.lewandowskiBonus > 0 ? `<li><span>Lewy Form Bonus</span> <span>+${breakdown.lewandowskiBonus}</span></li>` : ''}
+        ${breakdown.yamalBonus > 0 ? `<li><span>Yamal G/A Bonus</span> <span>+${breakdown.yamalBonus}</span></li>` : ''}
         ${breakdown.cleanSheetBonus > 0 ? `<li><span>Clean Sheet Bonus</span> <span>+${breakdown.cleanSheetBonus}</span></li>` : ''}
         <li style="font-weight: bold; margin-top: 5px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 5px;">
             <span>Final Algorithmic Index</span> <span>${breakdown.totalScore}</span>
