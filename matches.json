@@ -1,39 +1,39 @@
 {
   "matches": [
     {
-      "date": "2024-03-08",
-      "opponent": "RCD Mallorca",
-      "competition": "La Liga",
-      "result": "Win",
-      "score": "1-0"
-    },
-    {
-      "date": "2024-03-03",
-      "opponent": "Athletic Club",
-      "competition": "La Liga",
-      "result": "Draw",
-      "score": "0-0"
-    },
-    {
-      "date": "2024-02-24",
-      "opponent": "Getafe CF",
-      "competition": "La Liga",
-      "result": "Win",
-      "score": "4-0"
-    },
-    {
-      "date": "2024-02-21",
-      "opponent": "SSC Napoli",
+      "date": "2026-03-10",
+      "opponent": "Newcastle United",
       "competition": "Champions League",
       "result": "Draw",
       "score": "1-1"
     },
     {
-      "date": "2024-02-17",
-      "opponent": "Celta Vigo",
+      "date": "2026-03-07",
+      "opponent": "Athletic Club",
       "competition": "La Liga",
       "result": "Win",
-      "score": "2-1"
+      "score": "0-1"
+    },
+    {
+      "date": "2026-03-03",
+      "opponent": "Atlético Madrid",
+      "competition": "Copa del Rey",
+      "result": "Win",
+      "score": "3-0"
+    },
+    {
+      "date": "2026-02-28",
+      "opponent": "Villarreal",
+      "competition": "La Liga",
+      "result": "Win",
+      "score": "4-1"
+    },
+    {
+      "date": "2026-02-22",
+      "opponent": "Levante",
+      "competition": "La Liga",
+      "result": "Win",
+      "score": "3-0"
     }
   ]
 }

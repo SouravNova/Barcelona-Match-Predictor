@@ -209,7 +209,7 @@ async function loadMatchHistory() {
         });
 
     } catch (error) {
-        console.warn("Live API failed, falling back to local matches.json.", error);
+        console.warn("Live API failed or is outdated, falling back to local matches.json.", error);
         
         try {
             const fallbackResponse = await fetch('matches.json');
