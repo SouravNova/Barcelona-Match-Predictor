@@ -1,4 +1,4 @@
-# Barcelona Match Predictor ⚽
+# Barcelona 💙❤️ Match Predictor ⚽
 
 ![Made with JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Football Analytics Project](https://img.shields.io/badge/Project-Football%20Analytics-004D98?style=for-the-badge&logo=fcbarcelona)
